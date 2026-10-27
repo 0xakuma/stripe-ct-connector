@@ -9,7 +9,7 @@ const start = async (): Promise<void> => {
 
   try {
     await server.listen({ port: config.port, host: '0.0.0.0' });
-    log.info('order-subscriber listening', { port: config.port });
+    log.info('order-subscriber listening', { port: config.port, nodeVersion: process.version });
   } catch (err) {
     const e = err as Error;
     log.error('order-subscriber failed to start', { errorType: e.name, errorMessage: e.message });
